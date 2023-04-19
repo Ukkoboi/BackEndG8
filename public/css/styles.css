@@ -1,3 +1,8 @@
+h3 {
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 body {
     text-align: center;
 }
@@ -5,7 +10,30 @@ body {
     line-height: 0.3;
 }
 .navphoto {
-    float:left;
+    display: block;
     width:100%;
     height:200px;
+}
+.container {
+    position: relative;
+    text-align: center;
+}
+.centered {
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button {
+    margin-right: 1px;
+}
+.footer {
+    font-size: small;
+    bottom: 10px; 
+}
+.photo {
+    width:  500px;
+    height: 500px;
+    object-fit: cover;
 }

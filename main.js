@@ -2,6 +2,7 @@
 
 const express = require("express"),
     app = express(),
+    router = express.Router(),
     homeController = require("./controllers/homeController"),
     errorController = require("./controllers/errorController"),
     layouts = require("express-ejs-layouts");
@@ -22,8 +23,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/photos", homeController.showPhotos);
-app.get("/info", homeController.showInfo);
+app.get("/aboutme", homeController.showAboutme);
 app.get("/blog", homeController.showBlog);
+app.get("/login", homeController.showLogin);
+app.get("/subscribe", homeController.showSubscribe);
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
