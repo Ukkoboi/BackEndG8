@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+.small-line p {
+    line-height: 0.3;
+}
+.navphoto {
+    float:left;
+    width:100%;
+    height:200px;
+}

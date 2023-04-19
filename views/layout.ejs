@@ -1,35 +1,41 @@
+<!-- View for layouts -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
     <title>Photopage</title>
-    <link rel="shortcut icon" type="image/png" href="/images/icon.png" />
+    <link rel="shortcut icon" type="image/png" href="/images/cameraicon.png" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 
 <body>
-    <div id="nav">
+    <div>
         <div>
+            <img src="/images/navphoto.jpg" alt="" class="navphoto">
             <h1 id="title">Photo Boi</h1>
         </div>
         <div class="col-sm nav-align">
             <a href="/">
-                <span class="button">Home</span>
+                <button type="button">Home</span>
             </a>
             <a href="/photos">
-                <span class="button">Photos</span>
+                <button type="button">Photos</span>
             </a>
             <a href="/info">
-                <span class="button">Info</span>
+                <button type="button">About me</span>
             </a>
             <a href="/blog">
-                <span class="button">blog</span>
+                <button type="button">blog</span>
             </a>
         </div>
     </div>
 
     <%- body %>
+
+    <div>
+        <a style="font-size: small;" href="https://pixabay.com/">Photos used in project are royalty-free and taken from Pixbay.</a>
+    </div>
 
 </body>
 

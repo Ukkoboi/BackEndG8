@@ -1,11 +1,11 @@
 "use strict";
 
 exports.showPhotos = (req, res) => {
-    res.render("photos");
+  res.render("photos");
 };
 
 exports.showInfo = (req, res) => {
-    res.render("info");
+  res.render("info");
 };
 
 exports.showBlog = (req, res) => {
