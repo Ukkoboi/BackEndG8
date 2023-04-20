@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 .small-line p {
-    line-height: 0.3;
+    line-height: 0.3;  
 }
 .navphoto {
     display: block;
@@ -36,4 +36,12 @@ button {
     width:  500px;
     height: 500px;
     object-fit: cover;
+}
+.aboutpic {
+    width: 300px;
+    height: 150px;
+}
+.indexpic {
+    width: 600px;
+    height: 200px;
 }
