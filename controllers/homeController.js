@@ -9,7 +9,8 @@ exports.showAboutme = (req, res) => {
 };
 
 exports.showBlog = (req, res) => {
-  res.render("blog");
+  //const blogData = res.locals.blogData
+  res.render("blog"); //Use contents of blogData with this template
 };
 
 exports.showLogin = (req, res) => {
@@ -19,3 +20,7 @@ exports.showLogin = (req, res) => {
 exports.showSubscribe = (req, res) => {
   res.render("subscribe");
 };
+
+exports.redirect = (req,res) => {
+  res.redirect(res.locals.redirect);
+}

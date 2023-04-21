@@ -11,11 +11,25 @@
 
 <body>
     <div>
+        <div class="flashes">
+            <% if (flashMessages) { %>
+                <% if (flashMessages.success) { %>
+                    <div class="flash success"><%= flashMessages.success %></div>
+                <% } else if (flashMessages.error) { %>
+                    <div class="flash error"><%= flashMessages.error %></div>
+                    <% } %>
+                <% } %>
+        </div>
+        <% if(loggedIn) { %>
+            logged in as admin.
+            <a href="/logout">Logout</a>
+        <% } %>
         <div>
             <h3>FocusPoint</h1>
             <img src="/images/navphoto.jpg" alt="" class="navphoto">
         </div>
         <div>
+            
             <a href="/">
                 <button type="button">Home</span>
             </a>

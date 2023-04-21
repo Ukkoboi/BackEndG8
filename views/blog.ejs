@@ -1,4 +1,10 @@
 <div>
     <h1>Blog page</h1>
     <p>Here will be my blog posts<p>
+        <% if(loggedIn) { %>
+            <form action="/create_post" method="POST">
+                <h1>Add new blog post:</h1>
+                <button type="submit">Post</button>
+            </form>
+        <% } %>
 </div>
