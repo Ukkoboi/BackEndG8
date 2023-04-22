@@ -47,7 +47,8 @@ app.get("/", (req, res) => {
 
 app.get("/photos", homeController.showPhotos);
 app.get("/aboutme", homeController.showAboutme);
-app.get("/blog", homeController.showBlog); //Need to add blogController.fetchBlogPosts as first middleware
+app.get("/blog", blogController.fetchBlogPosts, homeController.showBlog);
+app.post("/create_post", blogController.insertBlogPost, homeController.redirect);
 app.get("/login", homeController.showLogin);
 app.post("/authenticate",authController.authenticate);
 app.get("/logout",authController.logout,homeController.redirect)

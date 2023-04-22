@@ -1,9 +1,18 @@
 <div>
     <h1>Blog page</h1>
     <p>Here will be my blog posts<p>
+        <% blogData.forEach(bd => { %>
+            <p><%=bd.name%></p>
+            <p><%=bd.content%></p>
+            <%
+        }); %>
         <% if(loggedIn) { %>
             <form action="/create_post" method="POST">
                 <h1>Add new blog post:</h1>
+                <label for="inputTitle">Title</label>
+                <input class="form-control" type="text" name="title" id="inputTitle" placeholder="Title">
+                <label for="textarea">Text area</label>
+                <textarea name="post" placeholder="write your post here" rows="5" cols="40"></textarea>
                 <button type="submit">Post</button>
             </form>
         <% } %>

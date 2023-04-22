@@ -5,12 +5,13 @@ exports.showPhotos = (req, res) => {
 };
 
 exports.showAboutme = (req, res) => {
-  res.render("Aboutme");
+  res.render("aboutme");
 };
 
 exports.showBlog = (req, res) => {
-  //const blogData = res.locals.blogData
-  res.render("blog"); //Use contents of blogData with this template
+  const blogData = res.locals.blogData;
+  console.log(blogData);
+  res.render("blog", blogData); 
 };
 
 exports.showLogin = (req, res) => {
