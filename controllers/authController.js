@@ -11,6 +11,5 @@ module.exports = {
             res.locals.redirect = "/";
             next();
         });
-
     }
 }
