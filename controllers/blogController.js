@@ -4,7 +4,6 @@ const Blog = require("../models/blog");
 module.exports = {
     fetchBlogPosts: (req, res, next) => {
         Blog.find({}).exec().then(blogData => {
-            console.log(blogData);
             res.locals.blogData = blogData;
             next();
         }).catch (error => {
@@ -14,7 +13,6 @@ module.exports = {
     insertBlogPost: (req, res, next) => {
         Blog.create({name: req.body.title, content: req.body.post}
         ).then(blogData => {
-            console.log(blogData)
             res.locals.redirect = "/blog";
             next();
         }).catch(error => {

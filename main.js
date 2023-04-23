@@ -7,6 +7,7 @@ const express = require("express"),
     Admin = require("./models/Admin"),
     connectFlash = require("connect-flash"),
     blogController = require("./controllers/blogController"),
+    subscriberController = require("./controllers/subscriberController"),
     passport = require("passport"),
     expressSession = require("express-session"),
     cookieParser = require("cookie-parser"),
@@ -53,6 +54,7 @@ app.get("/login", homeController.showLogin);
 app.post("/authenticate",authController.authenticate);
 app.get("/logout",authController.logout,homeController.redirect)
 app.get("/subscribe", homeController.showSubscribe);
+app.post("/create_subscriber", subscriberController.insertSubscriber, homeController.redirect);
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
