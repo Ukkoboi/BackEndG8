@@ -57,6 +57,9 @@ app.get("/subscribe", homeController.showSubscribe);
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
-app.listen(app.get("port"), () => {
+const server = (app.listen(app.get("port"), () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
-});
+}));
+
+const io = require("socket.io")(server);
+const chatController = require("./controllers/chatController")(io);

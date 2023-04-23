@@ -7,7 +7,9 @@
     <title>Photopage</title>
     <link rel="shortcut icon" type="image/png" href="/images/cameraicon.png" />
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
 </head>
+
 
 <body>
     <div>
@@ -53,11 +55,33 @@
 
     <%- body %>
 
-        <div>
-            <a class="footer" href="https://pixabay.com/">Photos used in project are royalty-free and taken
-                from Pixbay.</a>
-        </div>
+    <form id="chatForm">
+        <div id="chatBox"></div>
+        <label for="chatMessage">Chat message: </label>
+        <input id="chatMessage" name="chatMessage" placeholder="type your message">
+        <br>
+        <button id="chatButton" type="submit">Send</button>
+    </form>
+    
 
+    <div>
+        <a class="footer" href="https://pixabay.com/">Photos used in project are royalty-free and taken
+            from Pixbay.</a>
+    </div>
 </body>
-
+<script>
+    const socket = io();
+    document.getElementById("chatForm").addEventListener("submit",(event) => {
+        event.preventDefault();
+        socket.emit("message",{"message":document.getElementById("chatMessage").value});
+    })
+    socket.on("message",(message) => {
+        console.log(message);
+        let newMessage = document.createElement("li");
+        newMessage.innerText=message.message;
+        const chatBox = document.getElementById("chatBox")
+        chatBox.appendChild(newMessage);
+        chatBox.scroll({ top: chatBox.scrollHeight, behavior: 'smooth' });}) 
+    
+</script>
 </html>
