@@ -23,7 +23,7 @@
                 <% } %>
         </div>
         <% if(loggedIn) { %>
-            logged in as admin.
+            Logged in as admin.
             <a href="/logout">Logout</a>
         <% } %>
         <div>
@@ -69,6 +69,7 @@
             from Pixbay.</a>
     </div>
 </body>
+
 <script>
     const socket = io();
     document.getElementById("chatForm").addEventListener("submit",(event) => {

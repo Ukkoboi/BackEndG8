@@ -3,7 +3,11 @@ const Blog = require("../models/blog");
 
 module.exports = {
     fetchBlogPosts: (req, res, next) => {
-        Blog.find({}).exec().then(blogData => {
+        let searchParameters = {};
+        if (req.query.searchedWord){
+            searchParameters = {"name":/req.query.searcherWord/,"content":/req.query.searchedWord/}
+        }
+        Blog.find(searchParameters).exec().then(blogData => {
             res.locals.blogData = blogData;
             next();
         }).catch (error => {
