@@ -5,7 +5,7 @@ h3 {
 }
 body {
     text-align: center;
-    background-image: radial-gradient(red, yellow);
+    background-image: repeating-linear-gradient(#ead69fc7, #bf8630);
 }
 .small-line p {
     line-height: 0.3;
