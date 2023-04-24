@@ -5,13 +5,12 @@ h3 {
 }
 body {
     text-align: center;
+    background-color: blanchedalmond;
 }
 .small-line p {
     line-height: 0.3;
 }
 .navphoto {
-    display: block;
-    width:100%;
     height:200px;
 }
 .container {
@@ -32,14 +31,68 @@ button {
     font-size: small;
     bottom: 10px; 
 }
-.photo {
-    width:  500px;
-    height: 500px;
-    object-fit: cover;
+.test{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
+.test > li {
+    flex-basis: 500px; /* width: 350px; */
+    list-style-type: none;
+}
+.test li img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+.form-control {
+    margin: auto;
+    width: 200px;
+    border: 3px dotted black;
+    padding: 10px;
+}
+.login-btn {
+    top:50%;
+    background-color: grey;
+    color: black;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:20px; 
+    min-width: 100px;
+}
+.login-btn:hover {
+    background-color: yellow;
+    transition: 0.7s;
+    }
+.textarea {
+    width: 70%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
 #chatBox {
     border: 10px;
     height: 100px;
     max-height:100px;
     overflow:scroll;
+}
+@media only screen and (max-width: 700px){
+    .photo{
+        display: block;
+        flex: 50%
+    }
 }
