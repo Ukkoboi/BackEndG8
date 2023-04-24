@@ -4,8 +4,9 @@ const Blog = require("../models/blog");
 module.exports = {
     fetchBlogPosts: (req, res, next) => {
         let searchParameters = {};
-        if (req.query.searchedWord){
-            searchParameters = {"name":/req.query.searcherWord/,"content":/req.query.searchedWord/}
+        console.log(req.query.blogSearch)
+        if (req.query.blogSearch){
+            searchParameters = {$or:[{"name":new RegExp(req.query.blogSearch, "i")},{"content": new RegExp(req.query.blogSearch, "i")}]}
         }
         Blog.find(searchParameters).exec().then(blogData => {
             res.locals.blogData = blogData;
