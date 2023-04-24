@@ -3,9 +3,13 @@ h3 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.gallerie h1 {
+    font-family: cursive;
+    font-size: xx-large;
+}
 body {
     text-align: center;
-    background-image: repeating-linear-gradient(#ead69fc7, #bf8630);
+    background-image: repeating-linear-gradient(#eeddaec7, #f2bc6b);
 }
 .small-line p {
     line-height: 0.3;
@@ -31,17 +35,17 @@ button {
     font-size: small;
     bottom: 10px; 
 }
-.test{
+.photos{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
 }
-.test > li {
+.photos > li {
     flex-basis: 500px; /* width: 350px; */
     list-style-type: none;
 }
-.test li img {
+.photos li img {
     object-fit: cover;
     max-width: 100%;
     height: auto;
