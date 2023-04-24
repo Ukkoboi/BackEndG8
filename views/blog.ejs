@@ -1,5 +1,10 @@
 <div>
     <h1>Blog page</h1>
+    <form id="blogSearch" action="/blog" method="GET">
+        <label for="blogSearch">Search term: </label> 
+        <input id="blogSearch" name="blogSearch" placeholder="Insert your search term">
+        <button type="submit">Search blog posts</button>
+    </form>
     <p>Here will be my blog posts<p>
         <% blogData.forEach(bd => { %>
             <p><%=bd.name%></p>
