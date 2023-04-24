@@ -5,7 +5,7 @@ h3 {
 }
 body {
     text-align: center;
-    background-color: blanchedalmond;
+    background-image: radial-gradient(red, yellow);
 }
 .small-line p {
     line-height: 0.3;
