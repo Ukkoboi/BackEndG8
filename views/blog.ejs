@@ -5,9 +5,8 @@
         <input id="blogSearch" name="blogSearch" placeholder="Insert your search term">
         <button type="submit">Search blog posts</button>
     </form>
-    <p>Here will be my blog posts<p>
         <% blogData.forEach(bd => { %>
-            <p><%=bd.name%></p>
+            <h5><%=bd.name%></h5>
             <p><%=bd.content%></p>
             <%
         }); %>
@@ -16,9 +15,10 @@
                 <h1>Add new blog post:</h1>
                 <label for="inputTitle">Title</label>
                 <input class="form-control" type="text" name="title" id="inputTitle" placeholder="Title">
-                <label for="textarea">Text area</label>
+                <br>
                 <textarea name="post" placeholder="write your post here" rows="5" cols="40" class="textarea"></textarea>
-                <button type="submit">Post</button>
+                <br>
+                <br><button type="submit">Post</button>
             </form>
         <% } %>
 </div>

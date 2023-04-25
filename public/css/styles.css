@@ -3,13 +3,19 @@ h3 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+h4 {
+    font-size: 30px;
+}
+h5 {
+    font-size: 20px;
+}
 .gallerie h1 {
     font-family: cursive;
     font-size: xx-large;
 }
 body {
     text-align: center;
-    background-image: repeating-linear-gradient(#eeddaec7, #f2bc6b);
+    background-image: repeating-linear-gradient(#cdcfd2c8, #60778e);
 }
 .small-line p {
     line-height: 0.3;
@@ -27,9 +33,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-button {
-    margin-right: 1px;
 }
 .footer {
     font-size: small;
@@ -63,20 +66,35 @@ label {
     border: 3px dotted black;
     padding: 10px;
 }
-.login-btn {
-    top:50%;
-    background-color: grey;
-    color: black;
-    border:none; 
-    border-radius:10px; 
-    padding:15px;
-    min-height:20px; 
-    min-width: 100px;
+.btn1 {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #373B44;
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
-.login-btn:hover {
-    background-color: yellow;
-    transition: 0.7s;
-    }
+.btn1:hover,
+.btn1:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+.btn1:active {
+    background: var(--color);
+    color: #fff;
+}
 .textarea {
     width: 70%;
     height: 150px;
@@ -88,24 +106,56 @@ label {
     font-size: 16px;
     resize: none;
   }
-
 #chatForm {
     margin-top: 10%;
 }
-
+#chatMessage {
+    margin: auto;
+    width: 200px;
+    border: 3px dotted black;
+    padding: 10px;
+}
 #chatBox {
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-style: solid ;
-    background-color: rgb(241, 190, 128);
+    background-color: rgb(172, 177, 182);
     height: 100px;
     max-height:100px;
     max-width: 50%;
     overflow:scroll;
 }
+.menu-btn {
+    margin-right: 1px;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    background: #818183;
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    height: 25px;
+    padding: 0 14px;
+    font-size: 18px;
+    border-radius: 6px;
+    color: #36395a;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+}
+.menu-btn:hover {
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    transform: translateY(-2px);
+}
+.menu-btn:active{
+    box-shadow: inset 0px 3px 7px #b3b3b8;
+    transform: translateY(2px);
+}
 .hamburgerMenu a:link{
     text-decoration: none;
+}
+.hamburgerMenu a {
+   color: #030303;
 }
 .message{
     list-style: none;
@@ -113,7 +163,7 @@ label {
     border-style:solid;
     border-width: thin;
     overflow-wrap:break-word;
-    background-color: burlywood;
+    background-color: rgb(105, 122, 150);
 }
 @media only screen and (max-width: 700px){
     .photo{
